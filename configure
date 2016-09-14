@@ -1,0 +1,1 @@
+--disable-update-mimedb --disable-selinux --enable-tracker=no 
