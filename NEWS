@@ -1,3 +1,42 @@
+Major changes in 3.20.0:
+* Increase gtk+ depencency version (Michael Biebl)
+
+Major changes in 3.21.92:
+* Fix libgd warning (Bastien Nocera)
+* Numerous batch renaming improvements and fixes (Alex Pandelea, Carlos Soriano)
+* Detect .bz and .xz as extensions for renaming (Alex Pandelea)
+* Fix operations popover too small (Ernestas Kulik)
+* Add dummy --no-desktop option so Dropbox plugin works again (Carlos Soriano)
+* Fix build when using the --disable-tracker compile time option (Carlos Soriano)
+
+Major changes in 3.21.91:
+* Implement batch renaming tool (Alex Pandelea)
+* Implement compressed files support (Razvan Chitu)
+* Rework the view menus (Neil Herald)
+* Separate desktop handling from Nautilus (Carlos Soriano)
+* Add missing cut shortcut (Pedro Beja)
+* Add <ctrl>= as "zoom in" shortcut (Ernestas Kulik)
+
+Major changes in 3.20.3:
+* Support HDPI in desktop margins (Andrea Azzarone)
+* Fix opaque desktop background after changing themes (Ernestas Kulik)
+* Fix gnome-shell search not providing results or making the CPU at 100% even if closed (Carlos Soriano)
+
+Major changes in 3.20.2:
+* Fix white desktop background after changing themes (Sebastien Keller)
+* Improve double click detection (Johannes Oertel)
+* Fix path bar menu on wayland appearing on random places (Olivier Fourdan)
+* Only save zoom level if the level has changed (Mike Gorse)
+* Fix date difference calculation for attributes like Modified Date (Ernestas Kulik)
+* Hide floating bar on hover (Carlos Soriano)
+* Fix detection of remote systems for not thumbnailing (Ernestas Kulik)
+* Fix sorting on Japanese locale (Ernestas Kulik)
+* Fix gnome shell search provider not being recursive (Carlos Soriano)
+* Fix copy operation lags (Razvan Chitu)
+* Avoid unresponsiveness when file chooser is opened (Ernestas Kulik)
+* Fix renaming duplicated logic on search and recent (Ernestas Kulik)
+* Fix trash handling to delete files if disk is full (Mario Sanchez Prada)
+
 Major changes in 3.20.1:
 * Fix crash if using scripts (Carlos Soriano)
 * Fix shortcuts to change views mode (Razvan Chitu)
@@ -23,54 +62,7 @@ Major changes in 3.20.0:
 Major changes in 3.19.93:
 * Use better arrows for the path bar (Carlos Soriano)
 
-Major changes in 3.19.92:
-* Use better thread handling in undo operations (Razvan Chitu)
-* Disable zoom and sort menus when the folder is empty (Carlos Soriano)
-* Always show the sliders in the pathbar to avoid pathbar clipping (Carlos Soriano)
-* Disable Alt+Home for desktop window, avoiding to change the desktop location (Alexandru Pandelea)
-* Avoid drag and drop visual hint in list view (Carlos Soriano)
-* Make sure we select the previous folder when going upwards in the hierarchy (Carlos Soriano)
-
-Major changes in 3.19.91:
-* Use GTask instead of the old gioscheduler (Razvan Chitu)
-* Improve wording of the conflict dialog (Rishabh Makhija)
-* Make dialogs transients and modals for parent windows (Michael Cantazaro)
-* Reveal folder on creation (Carlos Soriano)
-* Fix dark theme background (Alezxandru Pandelea)
-* Hide hidden files when renamed from normal files (Carlos Soriano)
-* Select first file while searching even if search didn't finished (Carlos Soriano)
-* Multiple localization fixes (Carlos Soriano)
-* Fix the shell search provider (Carlos Soriano)
-* Style fixes with latest gtk+ (Carlos Soriano)
-* Hide undo delete notification if the user undo (Razvan Chitu)
-* Don't show thumbnails for small zoom level (Alexandru Pandelea)
-* Fix the info bar when navigating a DVD or a loopback mounted device (Carlos Soriano)
-* Allow copying from the trash (Andrej Holy)
-* Remove notifications when the application closes, fixing the "notifications appear after reboot" (Razvan Chitu)
-* Add Open With Other Application for all items, allowing i.e. desktop files to be opened with a text editor (aki)
-* Add <alt>+<return> shortcut for properties, matching other GNOME applications (Joseph-Eugene Winzer)
-* Remove the "Untitled" when creating templates (Ricard Gascons)
-
-Major changes in 3.19.90:
-* Reorganize shortcuts (Felipe Borges)
-* Remove bookmark manager (Carlos Soriano)
-* More robust search (Carlos Soriano)
-* Add preference for menu item "Delete Permanently" (Razvan Chitu)
-* Add preference for menu item "Create Link" (Razvan Chitu)
-* Fix jp2 images crashing nautilus (Carlos Soriano)
-* Change icon of operations cancelation when operation is finished (Paolo Borelli)
-* Allow Nautilus windows to be styled differently than other applications (Horst3180)
-* Add new search popover and search filtering (Georges Basile Stavracas Neto)
-* Allow different search preferences for remote and local separately (Carlos Soriano)
-* Remove sorting preference, since the view menu is the preference itself (Carlos Soriano)
-* Allow different view type setting for search and normal (Carlos Soriano)
-* Rework preferences window (Carlos Soriano)
-* Add another zoom level and improve icons padding (Cosimo Cecchi, Carlos Soriano)
-* Allow to open the "Other Locations" in new tabs or windows (Carlos Soriano)
-* Make operations popover keyboard navigable (Carlos Soriano)
-* Limit search to maximum 5 years (Alexandru Pandelea)
-
-Major changes in 3.19.2:
+sMajor changes in 3.19.2:
 * Show free space in Other Places (Georges Stravacas)
 * Add shortcuts window (Felipe Borges)
 * Fix new window Gnome Shell dash item (Carlos Soriano)
