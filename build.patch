@@ -1,0 +1,10 @@
+--- nautilus-3.22.2/src/nautilus-batch-rename-utilities.h~	2016-12-08 15:14:05.000000000 +0000
++++ nautilus-3.22.2/src/nautilus-batch-rename-utilities.h	2017-01-27 18:29:25.695222642 +0000
+@@ -21,7 +21,6 @@
+ 
+ #include <gio/gio.h>
+ #include <gtk/gtk.h>
+-#include <tracker-sparql.h>
+ 
+ GList* batch_rename_dialog_get_new_names_list          (NautilusBatchRenameDialogMode  mode,
+                                                         GList                         *selection,

@@ -1,5 +1,5 @@
 PKG_NAME := nautilus
-URL := http://ftp.gnome.org/pub/gnome/sources/nautilus/3.22/nautilus-3.22.1.tar.xz
-ARCHIVES :=
+URL := https://download.gnome.org/sources/nautilus/3.24/nautilus-3.24.0.tar.xz
+
 
 include ../common/Makefile.common
