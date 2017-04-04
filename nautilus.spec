@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.24.0
-Release  : 4
+Release  : 5
 URL      : https://download.gnome.org/sources/nautilus/3.24/nautilus-3.24.0.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.24/nautilus-3.24.0.tar.xz
 Summary  : A library to create Nautilus view extensions
@@ -97,12 +97,12 @@ locales components for the nautilus package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1490638108
+export SOURCE_DATE_EPOCH=1491325614
 %configure --disable-static --disable-update-mimedb --disable-selinux --enable-tracker=no
 make V=1  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1490638108
+export SOURCE_DATE_EPOCH=1491325614
 rm -rf %{buildroot}
 %make_install
 %find_lang nautilus
@@ -118,12 +118,14 @@ rm -rf %{buildroot}
 
 %files data
 %defattr(-,root,root,-)
+/usr/lib64/girepository-1.0/Nautilus-3.0.typelib
 /usr/share/appdata/org.gnome.Nautilus.appdata.xml
 /usr/share/applications/nautilus-autorun-software.desktop
 /usr/share/applications/nautilus-classic.desktop
 /usr/share/applications/org.gnome.Nautilus.desktop
 /usr/share/dbus-1/services/org.freedesktop.FileManager1.service
 /usr/share/dbus-1/services/org.gnome.Nautilus.service
+/usr/share/gir-1.0/*.gir
 /usr/share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml
 /usr/share/gnome-shell/search-providers/nautilus-search-provider.ini
 /usr/share/icons/hicolor/16x16/apps/org.gnome.Nautilus.png
@@ -147,10 +149,8 @@ rm -rf %{buildroot}
 /usr/include/nautilus/libnautilus-extension/nautilus-menu.h
 /usr/include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 /usr/include/nautilus/libnautilus-extension/nautilus-property-page.h
-/usr/lib64/girepository-1.0/Nautilus-3.0.typelib
 /usr/lib64/libnautilus-extension.so
 /usr/lib64/pkgconfig/libnautilus-extension.pc
-/usr/share/gir-1.0/*.gir
 
 %files doc
 %defattr(-,root,root,-)
