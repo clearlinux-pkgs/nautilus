@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.24.1
-Release  : 6
+Release  : 7
 URL      : https://download.gnome.org/sources/nautilus/3.24/nautilus-3.24.1.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.24/nautilus-3.24.1.tar.xz
 Summary  : A library to create Nautilus view extensions
