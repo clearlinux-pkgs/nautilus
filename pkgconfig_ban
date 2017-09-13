@@ -1,8 +1,5 @@
 # This file contains pkgconfig build requirements that get picked up
 # but are undesirable. One entry per line, no whitespace.
-tracker-sparql-0.18
-tracker-sparql-0.16
 libselinux
-tracker-sparql-1.0
-gail-3.0	gnome-desktop-3.0
+gail-3.0
 libexif
