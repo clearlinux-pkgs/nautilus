@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.26.0
-Release  : 10
+Release  : 11
 URL      : https://download.gnome.org/sources/nautilus/3.26/nautilus-3.26.0.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.26/nautilus-3.26.0.tar.xz
 Summary  : A library to create Nautilus view extensions
@@ -13,11 +13,15 @@ License  : GPL-3.0 LGPL-2.1
 Requires: nautilus-bin
 Requires: nautilus-data
 Requires: nautilus-lib
+Requires: nautilus-doc
 Requires: nautilus-locales
 BuildRequires : desktop-file-utils
+BuildRequires : docbook-xml
 BuildRequires : gobject-introspection
 BuildRequires : gobject-introspection-dev
+BuildRequires : gtk-doc
 BuildRequires : libexif-dev
+BuildRequires : libxslt
 BuildRequires : meson
 BuildRequires : ninja
 BuildRequires : pkgconfig(gnome-autoar-0)
@@ -70,6 +74,14 @@ Provides: nautilus-devel
 dev components for the nautilus package.
 
 
+%package doc
+Summary: doc components for the nautilus package.
+Group: Documentation
+
+%description doc
+doc components for the nautilus package.
+
+
 %package lib
 Summary: lib components for the nautilus package.
 Group: Libraries
@@ -96,7 +108,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505332699
+export SOURCE_DATE_EPOCH=1505342518
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -104,7 +116,7 @@ export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sect
 export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -D enable-packagekit=false -D enable-selinux=false -D with-introspection=true -D enable-packagekit=false builddir
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -D enable-packagekit=false -D enable-selinux=false -D with-introspection=true -D enable-packagekit=false -D enable-gtk-doc=true builddir
 ninja -v -C builddir
 
 %install
@@ -156,6 +168,34 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/nautilus/libnautilus-extension/nautilus-property-page.h
 /usr/lib64/libnautilus-extension.so
 /usr/lib64/pkgconfig/libnautilus-extension.pc
+
+%files doc
+%defattr(-,root,root,-)
+%doc /usr/share/man/man1/*
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusColumn.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusColumnProvider.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusFileInfo.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusInfoProvider.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusLocationWidgetProvider.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusMenu.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusMenuItem.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusMenuProvider.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusPropertyPage.html
+/usr/share/gtk-doc/html/libnautilus-extension/NautilusPropertyPageProvider.html
+/usr/share/gtk-doc/html/libnautilus-extension/ch01.html
+/usr/share/gtk-doc/html/libnautilus-extension/home.png
+/usr/share/gtk-doc/html/libnautilus-extension/index.html
+/usr/share/gtk-doc/html/libnautilus-extension/ix01.html
+/usr/share/gtk-doc/html/libnautilus-extension/left-insensitive.png
+/usr/share/gtk-doc/html/libnautilus-extension/left.png
+/usr/share/gtk-doc/html/libnautilus-extension/libnautilus-extension-NautilusModule.html
+/usr/share/gtk-doc/html/libnautilus-extension/libnautilus-extension.devhelp2
+/usr/share/gtk-doc/html/libnautilus-extension/pt01.html
+/usr/share/gtk-doc/html/libnautilus-extension/right-insensitive.png
+/usr/share/gtk-doc/html/libnautilus-extension/right.png
+/usr/share/gtk-doc/html/libnautilus-extension/style.css
+/usr/share/gtk-doc/html/libnautilus-extension/up-insensitive.png
+/usr/share/gtk-doc/html/libnautilus-extension/up.png
 
 %files lib
 %defattr(-,root,root,-)
