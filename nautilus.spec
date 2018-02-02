@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.26.2
-Release  : 12
+Release  : 13
 URL      : https://download.gnome.org/sources/nautilus/3.26/nautilus-3.26.2.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.26/nautilus-3.26.2.tar.xz
 Summary  : A library to create Nautilus view extensions
