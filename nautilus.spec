@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.26.2
-Release  : 13
+Release  : 14
 URL      : https://download.gnome.org/sources/nautilus/3.26/nautilus-3.26.2.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.26/nautilus-3.26.2.tar.xz
 Summary  : A library to create Nautilus view extensions
@@ -27,7 +27,7 @@ BuildRequires : ninja
 BuildRequires : pkgconfig(gnome-autoar-0)
 BuildRequires : pkgconfig(gnome-desktop-3.0)
 BuildRequires : pkgconfig(libxml-2.0)
-BuildRequires : pkgconfig(tracker-sparql-1.0)
+BuildRequires : pkgconfig(tracker-sparql-2.0)
 BuildRequires : pkgconfig(x11)
 BuildRequires : python3
 Patch1: 0001-autostart-desktop-file-goes-to-usr-share-xdg-and-not.patch
@@ -108,7 +108,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1511880203
+export SOURCE_DATE_EPOCH=1518035031
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
