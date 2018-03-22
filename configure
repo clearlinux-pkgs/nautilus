@@ -1,1 +1,1 @@
--D enable-packagekit=false -D enable-selinux=false -D with-introspection=true -D enable-packagekit=false -D enable-gtk-doc=true
+-Ddocs=true
