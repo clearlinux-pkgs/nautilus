@@ -1,57 +1,5 @@
-Major changes in 3.28.0:
-* Fix build failure (Ernestas Kulik)
-* Translation updates
-
-Major changes in 3.27.92.1:
-* Fix build failures (António Fernandes, Ernestas Kulik)
-* Break the build (Ernestas Kulik)
-
-Major changes in 3.27.92:
-* Don’t open files when double-clicking star icon (Alexandru Fazakas)
-* Fix crashes caused by extremely long error messages (Ernestas Kulik)
-* Don’t strip extensions from folder names in “Compress…” dialog (Rahul Verma)
-* Set keyboard focus when programmatically selecting in list view (António Fernandes)
-* Remove new folder name suggestion when there is an active selection (Alexandru Fazakas)
-* Hide thumbnails when using small icons (Alexandru Fazakas)
-* Reduce help overlay size (Carlos Soriano)
-
-Major changes in 3.27.90:
-* Enable closing tabs by middle-clicking (Carlos Soriano)
-* Rename “favorite” files to “starred” (Carlos Soriano)
-* Fix starring files with special characters (Carlos Soriano)
-* Ellipsize tab labels less aggressively for large numbers of tabs (António Fernandes)
-* Fix infinite loop when extracting encrypted archives (Ernestas Kulik)
-* Remove support for external bulk rename tools (Carlos Soriano)
-* Only show option to star files in indexed locations (Carlos Soriano)
-* Fix batch renaming for files with special characters in metadata (Ernestas Kulik)
-* Refactor extension library (Ernestas Kulik)
-* Show notification when unstarring files and allow undo (Carlos Soriano)
-* Fix AppStream metadata being installed in a deprecated location (Jeremy Bicha)
-
-Major changes in 3.27.4:
-* Better touch support (Jan-Michael Brummer, Antonio Fernandes)
-* Remove desktop icons (Ernestas Kulik, Antonio Fernandes, Carlos Soriano)
-* Add a close button for the path bar (Karuna Grewal)
-* Improve Flatpak support, now access to devices too (Carlos Soriano)
-* Improve trash performance (Ondrej Holy)
-* Improve window default position (Ernestas Kulik)
-* Improve starring files reliability (Alex Pandelea)
-* Add Microsoft Office types for search (Carlos Soriano)
-* Fix crash when detaching tabs (Nelson Benitez)
-* Add XF86Back and XF86Forward as key shortcuts (Antonio Fernandes)
-* Add keyboard navigability to the new views (Ernestas Kulik)
-* Make wallpaper folder translatable (Carlos Soriano)
-* Forbid more characters for FAT systems when renaming files (Ernestas Kulik)
-* Add DjVu as pdf type (Carlos Soriano)
-* Fix crash when expanding folders (Antonie Fernandes)
-
-Major changes in 3.27.2:
-* Add starring files (Alexandru Pandelea)
-* Fix timestamps for files in the future (Pete Bantock)
-* Never soft folders before files in search (Antonio Fernandes)
-* Remove fts setting from preferences (Alexandru Pandelea)
-* Reveal item when opened from the recent view (Nelson Benitez)
-* Fix crash when expanding folders in list view (Antonio Fernandes)
+Major changes in 3.26.2:
+* Fix crash in list view when expanding folders (Antonio Fernandes)
 
 Major changes in 3.26.0:
 * Translations
