@@ -1,0 +1,22 @@
+--- nautilus-3.28.0.1/meson.build~	2018-03-15 17:16:43.000000000 +0000
++++ nautilus-3.28.0.1/meson.build	2018-03-28 02:50:25.521397820 +0000
+@@ -30,19 +30,6 @@
+     '-Wall',
+     '-Wduplicated-branches',
+     '-Wlogical-op',
+-    '-Werror=declaration-after-statement',
+-    '-Werror=empty-body',
+-    '-Werror=format=2',
+-    '-Werror=implicit-function-declaration',
+-    '-Werror=init-self',
+-    '-Werror=missing-include-dirs',
+-    '-Werror=missing-prototypes',
+-    '-Werror=pointer-arith',
+-    '-Werror=sequence-point',
+-    '-Werror=shadow',
+-    '-Werror=strict-prototypes',
+-    '-Werror=undef',
+-    '-Werror=uninitialized',
+   ]),
+   language: 'c'
+ )
