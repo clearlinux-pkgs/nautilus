@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.28.1
-Release  : 19
+Release  : 20
 URL      : https://download.gnome.org/sources/nautilus/3.28/nautilus-3.28.1.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.28/nautilus-3.28.1.tar.xz
 Summary  : No detailed summary available
