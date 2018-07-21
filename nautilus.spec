@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.28.1
-Release  : 22
+Release  : 23
 URL      : https://download.gnome.org/sources/nautilus/3.28/nautilus-3.28.1.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.28/nautilus-3.28.1.tar.xz
 Summary  : No detailed summary available
@@ -13,8 +13,12 @@ License  : GPL-3.0 LGPL-2.1
 Requires: nautilus-bin
 Requires: nautilus-data
 Requires: nautilus-lib
-Requires: nautilus-doc
+Requires: nautilus-license
 Requires: nautilus-locales
+Requires: nautilus-man
+BuildRequires : appstream-glib
+BuildRequires : buildreq-gnome
+BuildRequires : buildreq-meson
 BuildRequires : desktop-file-utils
 BuildRequires : docbook-xml
 BuildRequires : gobject-introspection
@@ -22,15 +26,12 @@ BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
 BuildRequires : libexif-dev
 BuildRequires : libxslt
-BuildRequires : meson
-BuildRequires : ninja
 BuildRequires : pkgconfig(gexiv2)
 BuildRequires : pkgconfig(gnome-autoar-0)
 BuildRequires : pkgconfig(gnome-desktop-3.0)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(tracker-sparql-2.0)
 BuildRequires : pkgconfig(x11)
-BuildRequires : python3
 Patch1: build.patch
 
 %description
@@ -50,6 +51,8 @@ configure time and used at runtime.
 Summary: bin components for the nautilus package.
 Group: Binaries
 Requires: nautilus-data
+Requires: nautilus-license
+Requires: nautilus-man
 
 %description bin
 bin components for the nautilus package.
@@ -78,6 +81,7 @@ dev components for the nautilus package.
 %package doc
 Summary: doc components for the nautilus package.
 Group: Documentation
+Requires: nautilus-man
 
 %description doc
 doc components for the nautilus package.
@@ -87,9 +91,18 @@ doc components for the nautilus package.
 Summary: lib components for the nautilus package.
 Group: Libraries
 Requires: nautilus-data
+Requires: nautilus-license
 
 %description lib
 lib components for the nautilus package.
+
+
+%package license
+Summary: license components for the nautilus package.
+Group: Default
+
+%description license
+license components for the nautilus package.
 
 
 %package locales
@@ -98,6 +111,14 @@ Group: Default
 
 %description locales
 locales components for the nautilus package.
+
+
+%package man
+Summary: man components for the nautilus package.
+Group: Default
+
+%description man
+man components for the nautilus package.
 
 
 %prep
@@ -109,7 +130,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523306640
+export SOURCE_DATE_EPOCH=1532203138
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -117,10 +138,13 @@ export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sect
 export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -Ddocs=true builddir
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -Ddocs=true  builddir
 ninja -v -C builddir
 
 %install
+mkdir -p %{buildroot}/usr/share/doc/nautilus
+cp LICENSE %{buildroot}/usr/share/doc/nautilus/LICENSE
+cp libnautilus-extension/LICENSE %{buildroot}/usr/share/doc/nautilus/libnautilus-extension_LICENSE
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang nautilus
 
@@ -155,7 +179,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %defattr(-,root,root,-)
 /usr/include/nautilus/libnautilus-extension/nautilus-column-provider.h
 /usr/include/nautilus/libnautilus-extension/nautilus-column.h
-/usr/include/nautilus/libnautilus-extension/nautilus-extension-enum-types.c
 /usr/include/nautilus/libnautilus-extension/nautilus-extension-enum-types.h
 /usr/include/nautilus/libnautilus-extension/nautilus-extension-types.h
 /usr/include/nautilus/libnautilus-extension/nautilus-file-info.h
@@ -171,8 +194,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/lib64/pkgconfig/libnautilus-extension.pc
 
 %files doc
-%defattr(-,root,root,-)
-%doc /usr/share/man/man1/*
+%defattr(0644,root,root,0755)
 /usr/share/gtk-doc/html/libnautilus-extension/NautilusColumn.html
 /usr/share/gtk-doc/html/libnautilus-extension/NautilusColumnProvider.html
 /usr/share/gtk-doc/html/libnautilus-extension/NautilusFileInfo.html
@@ -205,6 +227,15 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/lib64/libnautilus-extension.so.1.5.0
 /usr/lib64/nautilus/extensions-3.0/libnautilus-image-properties.so
 /usr/lib64/nautilus/extensions-3.0/libnautilus-sendto.so
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/nautilus/LICENSE
+/usr/share/doc/nautilus/libnautilus-extension_LICENSE
+
+%files man
+%defattr(-,root,root,-)
+/usr/share/man/man1/nautilus.1.gz
 
 %files locales -f nautilus.lang
 %defattr(-,root,root,-)
