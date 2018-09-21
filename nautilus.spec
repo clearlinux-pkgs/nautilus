@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.30.0
-Release  : 24
+Release  : 25
 URL      : https://download.gnome.org/sources/nautilus/3.30/nautilus-3.30.0.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.30/nautilus-3.30.0.tar.xz
 Summary  : No detailed summary available
