@@ -1,4 +1,5 @@
-3.30.0
+3.30.1
 appstream-glib
 docbook-xml
+libseccomp-dev
 pkgconfig(libseccomp)
