@@ -4,10 +4,10 @@
 #
 Name     : nautilus
 Version  : 3.30.5
-Release  : 30
+Release  : 31
 URL      : https://download.gnome.org/sources/nautilus/3.30/nautilus-3.30.5.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.30/nautilus-3.30.5.tar.xz
-Summary  : No detailed summary available
+Summary  : Default file manager for GNOME
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-2.1
 Requires: nautilus-bin = %{version}-%{release}
@@ -30,6 +30,7 @@ BuildRequires : libxslt
 BuildRequires : pkgconfig(gexiv2)
 BuildRequires : pkgconfig(gnome-autoar-0)
 BuildRequires : pkgconfig(gnome-desktop-3.0)
+BuildRequires : pkgconfig(libseccomp)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(tracker-sparql-2.0)
 BuildRequires : pkgconfig(x11)
@@ -131,7 +132,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1544709593
+export SOURCE_DATE_EPOCH=1548428237
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -236,7 +237,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files man
 %defattr(0644,root,root,0755)
-/usr/share/man/man1/nautilus.1.gz
+/usr/share/man/man1/nautilus.1
 
 %files locales -f nautilus.lang
 %defattr(-,root,root,-)
