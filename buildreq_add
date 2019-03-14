@@ -6,3 +6,5 @@ gobject-introspection
 gobject-introspection-dev
 desktop-file-utils
 libxslt
+gstreamer-dev
+gst-plugins-base-dev
