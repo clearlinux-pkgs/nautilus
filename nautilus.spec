@@ -4,10 +4,10 @@
 #
 Name     : nautilus
 Version  : 3.32.0
-Release  : 32
+Release  : 33
 URL      : https://download.gnome.org/sources/nautilus/3.32/nautilus-3.32.0.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.32/nautilus-3.32.0.tar.xz
-Summary  : Default file manager for GNOME
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-2.1
 Requires: nautilus-bin = %{version}-%{release}
@@ -27,13 +27,17 @@ BuildRequires : gst-plugins-base-dev
 BuildRequires : gstreamer-dev
 BuildRequires : gtk-doc
 BuildRequires : libexif-dev
+BuildRequires : libseccomp-dev
 BuildRequires : libxslt
 BuildRequires : pkgconfig(gexiv2)
 BuildRequires : pkgconfig(gnome-autoar-0)
 BuildRequires : pkgconfig(gnome-desktop-3.0)
+BuildRequires : pkgconfig(libseccomp)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(tracker-sparql-2.0)
 BuildRequires : pkgconfig(x11)
+Patch1: build.patch
+Patch2: CVE-2019-11460.patch
 
 %description
 =====
@@ -124,20 +128,22 @@ man components for the nautilus package.
 
 %prep
 %setup -q -n nautilus-3.32.0
+%patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552522478
+export SOURCE_DATE_EPOCH=1555976513
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
+export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -mzero-caller-saved-regs=used "
+export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -mzero-caller-saved-regs=used "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -Ddocs=true  builddir
 ninja -v -C builddir
 

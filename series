@@ -1,1 +1,2 @@
-#build.patch
+build.patch
+CVE-2019-11460.patch
