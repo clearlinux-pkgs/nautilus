@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 3.32.1
-Release  : 36
+Release  : 37
 URL      : https://download.gnome.org/sources/nautilus/3.32/nautilus-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/3.32/nautilus-3.32.1.tar.xz
 Summary  : No detailed summary available
