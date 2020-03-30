@@ -1,8 +1,33 @@
-Major changes in 3.34.2:
+Major changes in 3.36.1.1:
+* Translation updates
+
+Major changes in 3.36.1:
+* Fix check to not clear clipboard after each move/copy operation (Artem Serostanov)
+* Ignore hidden directories in the templates folder (Ondrej Holy)
+* Honor umask when creating new files from templates (Ondrej Holy)
+* Fix endless content size calculations in properties dialog (Ondrej Holy)
+
+Major changes in 3.36.0:
+* Translation updates
+
+Major changes in 3.35.92:
+* Fix crashes often happening when searching (Ondrej Holy)
+* Say "Trash is Empty" only in the root of trash folder (Abdul Rauf)
+
+Major changes in 3.35.91.1:
+* Add support for hidden template files (Ondrej Holy)
+* Fix conflict dialog for google-drive (Ondrej Holy)
+
+Major changes in 3.35.90:
+* Fix crashes after conflict dialog response (Ondrej Holy)
+* Add support for numeric keypad for zooming (Sabri Ünal)
+* Fix missing filename results when searching (Ondrej Holy)
+* Fix compilation on Wayland-only systems (Javier Jardón)
+
+Major changes in 3.35.2:
 * Don't use hyphens when breaking filenames in multiple lines (António Fernandes)
 * Fix drag and drop on scaled displays (Robert Mader)
-
-Major changes in 3.34.1:
+* Add and use new icon for the development profile (Jakub Steiner, António Fernandes)
 * Fix criticals and crashes when closing properties dialog (Ondrej Holy)
 * Fix opening file previews in Sushi (Jan Alexander Steffens)
 * Fix criticals after trashing file (Ondrej Holy)
