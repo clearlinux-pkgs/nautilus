@@ -1,14 +1,53 @@
-Major changes in 3.36.2:
-* Prevent jump to the old scrolling position after changing location (António Fernandes)
-* Revert icon emblem fixes in order to prevent performance issues (António Fernandes)
-* Fix content type detection when opening files from remote locations (Ondrej Holy)
-
-Major changes in 3.36.1.1:
+Major changes in 3.38.0:
+* Fix missing Extract/Compress menu items (António Fernandes)
 * Translation updates
 
-Major changes in 3.36.1:
+Major changes in 3.37.92:
+* Port to Tracker 3 (Sam Thursfield)
+* Translation updates
+
+Major changes in 3.37.91:
+* Fix batch renaming using metadata (Max)
+* Translation updates
+
+Major changes in 3.37.90:
+* Port Properties dialog to GtkBuilder including various enhancements (Apoorv Sachan, António Fernandes)
+* Prevent crashes when file operation is cancelled (Ondrej Holy)
+* Auto-escape filenames on NTFS and exFAT mounts (ignapk)
+* Preserve navigation history after opening Other Locations (Sachin Daluja)
+* Use g_clear_signal_handler instead of custom codes (Joshua Lee)
+* Translation updates
+
+Major changes in 3.37.3:
+* Allow changing file owner under admin:/// scheme (Apoorv Sachan)
+* Update outdated appdata info (Ondrej Holy)
+* Translation updates
+
+Major changes in 3.37.2:
+* Fix broken tracker search engine under some locales (Cristiano Nunes, António Fernandes)
+* Use tabular numbers for progress info (Diego Escalante Urrelo)
+* Disable select-all while directory is loading (Ujjwal Kumar)
+* Add newly created files to Recent (Sachin Daluja)
+* Port to new PackageKit DBus API (Romeo Calota)
+* Translation updates
+
+Major changes in 3.37.1.1:
+* Prevent jump to the old scrolling position after changing location (António Fernandes)
+* Add org.gnome.Nautilus.FileOperations2 interface (Alberts Muktupāvels)
+* Fix content type detection when opening files from remote locations (Ondrej Holy)
+* Show notification on completion of file transfers if the window isn't focused (Sachin Daluja)
+* Add support for zoom media keys (Sabri Ünal)
+* Add dynamic tooltip for the toggle views button (Ujjwal Kumar)
+
+Major changes in 3.37.1:
+* Always show pathbar background to fix styling glitches (António Fernandes)
 * Fix check to not clear clipboard after each move/copy operation (Artem Serostanov)
 * Ignore hidden directories in the templates folder (Ondrej Holy)
+* Add several missing shortcuts to the Keyboard Shortcuts dialog (Sabri Ünal)
+* Unify pathbar and background context menus (Sachin Daluja)
+* Refactor menu handling to fix repeated popover animations (António Fernandes)
+* Mark Empty Trash and Delete All buttons as destructive actions (Alexey Chernyshov)
+* Show infobar to allow installation of OSTree software (Philip Withnall)
 * Honor umask when creating new files from templates (Ondrej Holy)
 * Fix endless content size calculations in properties dialog (Ondrej Holy)
 
