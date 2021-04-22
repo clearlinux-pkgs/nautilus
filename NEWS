@@ -1,6 +1,38 @@
-Major changes in 3.38.2
+Major changes in 40.0
+=====================
+* Translation updates
+
+Major changes in 40.rc
+======================
+* Group files depending on the opening app (Bastien Nocera, António Fernandes)
+* Fix crashes when closing the last tab (António Fernandes)
+* Revert text-based clipboard workaround and use the dedicated type again (António Fernandes)
+* Use GNOME 40 empty view styling (Christopher Davis, António Fernandes)
+* Translation updates
+
+Major changes in 40.beta
+========================
+* Improve tab completion in the location entry (James Westman, António Fernandes)
+* Make manual rename more convenient in File conflict dialog (António Fernandes)
+* Add support for extracting password-protected archives (Felipe Borges, Ondrej Holy)
+* Implement new single-page design of Preferences dialog (Adrien Plazas, António Fernandes)
+* Use libhandy for window and headerbar (Christopher Davis, Adrien Plazas)
+* Fix detection and handling of remote files (António Fernandes)
+* Fix progress reporting in various cases (Ondrej Holy, Sachin Daluja)
+* Fix Batch rename dialog crashes (Sachin Daluja)
+* Preserve mtime of non-empty directories on move (Maxim Mikityanskiy)
+* Translation updates
+
+Major changes in 40.alpha
+=========================
+* Add support for creation date (António Fernandes)
+* Fix several memory leaks (António Fernandes)
+* Do not use default location instead of root in path bar (Ondrej Holy)
+* Don't save window state when tiled (Elias Projahn)
 * Search for tracker3 in PATH (Antoine Jacoutot)
-* Fix batch rename dialog crashes (Ondrej Holy)
+* Use xdg-desktop-portal for setting wallpapers (Felipe Borges)
+* Handle rotated images in Preferences dialog (James Westman)
+* Fix Batch rename dialog crashes (Ondrej Holy)
 * Fix double-click row check (António Fernandes)
 * Translation updates
 
