@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 42.0
-Release  : 56
+Release  : 57
 URL      : https://download.gnome.org/sources/nautilus/42/nautilus-42.0.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/42/nautilus-42.0.tar.xz
 Summary  : No detailed summary available
@@ -16,6 +16,7 @@ Requires: nautilus-lib = %{version}-%{release}
 Requires: nautilus-license = %{version}-%{release}
 Requires: nautilus-locales = %{version}-%{release}
 Requires: nautilus-man = %{version}-%{release}
+Requires: dconf
 BuildRequires : appstream-glib
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
@@ -134,7 +135,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1647878503
+export SOURCE_DATE_EPOCH=1650043987
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
