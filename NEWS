@@ -1,45 +1,147 @@
-Major changes in 42.2
-=====================
-* Close broken link message dialog on response (António Fernandes)
-* Fix crash when opening new window from pathbar (Corey Berla)
-* Fix remote filesystem check (Corey Berla)
+Major changes in 43.0
+=========================
+* Bugfixes
+  - Open first search result with Enter, as before (Corey Berla)
+  - Don't freeze when opening media storage (Corey Berla)
 * Translation updates (GNOME Translation Project contributors)
 
-Major changes in 42.1.1
+Major changes in 43.rc
 =========================
-* Revert wrongly introduced dependency on unstable gnome-desktop. (António Fernandes)
-
-Major changes in 42.1
-=========================
-* Add HighContrast syle support (António Fernandes)
-* Preload dragged external file info in list view (Sergio Costas)
-* Override dark mode wallpaper when not using portal (Jeremy Bicha)
-* Avoid truncated popover in Compress dialog under X11 (António Fernandes)
-* Add checkerboard background to transparent thumbnails (Utkarsh Gandhi)
-* Style and scroll pathbar propperly in RTL languages (António Fernandes)
+* Resolving regressions from the GTK 3 to 4 switch:
+  - Restore accessible labels for view items (Corey Berla)
+  - HiDPI icons and thumbnails (António Fernandes)
+  - Restore transient location entry behavior (António Fernandes)
+  - Restore spacebar shortcut to trigger sushi file previewer (António Fernandes)
+  - Restore ability to create new file from dropped text (Corey Berla)
+  - Restore ability to duplicate via DND + Ctrl (Corey Berla)
+* Drag-and-drop enhancements:
+  - Allow dropping files into Starred to star them (Corey Berla)
+  - Prevent "open on hover" while moving pointer (Corey Berla, António Fernandes)
+* Menu enhancements:
+  - Add menu item to remove files from Starred list (Corey Berla)
+  - Don't activate menu button when clicking folder name (António Fernandes)
+  - Don't offer "Properties" and "Add to Bookmarks" actions when they don't make sense (Eric Daigle, Corey Berla, António Fernandes)
+* Properties enhancements
+  - Wrap long filename words in Properties (anarchistcat)
+  - Refine properties for root directory (Corey Berla)
+  - Show error state for extensions properties (António Fernandes)
+* General enhancements
+  - Redesign trash infobar (Ignacy Kuchciński, Sam Hewitt)
+  - Add tooltips to every headerbar control (Ronen Margolin)
+  - Update and modernize libnautilus-extension documentation (Jan Tojnar)
+  - Update appdata screenshots (Christopher Davis)
+* Bugfixes
+  - Fix various app chooser issues (Corey Berla)
+  - Fix various batch rename dialog issues (Corey Berla)
+  - Fix Highcontrast styles (Ignacy Kuchciński, António Fernandes)
+  - Fix focus misbehaviours in the new views (Corey Berla)
+  - Don't show URI escape codes in tooltips (Antonio Teixeira)
+  - Show sharing infobar in gnome-user-share's fallback location (Corey Berla)
+  - Fix icon size in file conflict dialog (António Fernandes)
+  - Fix operations indicator animation (António Fernandes)
+  - Mark missing translatable strings (Sabri Ünal)
+  - Fix various memory leaks (Ignacy Kuchciński, Corey Berla)
+  - Fix compilation errors (Jeremy Bicha, Ondrey Holy, Timo)
 * Translation updates (GNOME Translation Project contributors)
 
-Major changes in 42.0
+Major changes in 43.beta.1
+==========================
+* Restore view options tooltip (António Fernandes)
+* Mark new files for translation (Piotr Drąg)
+* Look for extensions in their new installation directory (Jeremy Bicha)
+
+Major changes in 43.beta
 =========================
-* Fix HiDPI thumbnails in list view (António Fernandes)
-* Properly dispose pathbar to avoid crashes (Ondrej Holy)
+* Adapting main window elements to smaller sizes (Christopher Davis);
+  - Make sidebar foldable.
+  - Split toolbar contorls into top and bottom toolbars at small sizes.
+* Restoring Disks integration (Corey Berla):
+  - Open storage unit in Disks from Properties.
+  - Format with Disks from the sidebar context menu.
+* Absorbing features from core plug-ins (Corey Brela):
+  - Provide infobar for Public folder, instead of gnome-user-share
+  - Provide context menu action to open folders in Console.
+  - Replace nautilus-send-to extension with Email portal.
+* Remodeling plug-ins
+  - List installed extensions plug-ins in About. (Corey Berla)
+  - Implement new Properties API and port Image and Audio/Video (António Fernades)
+  - Remove GTK-dependent API from libnautilus-extension (António Fernandes)
+  - Bump libnautilus-extension versions.
+* Improving search UI design
+  - Use modern design patterns for type filter chooser (António Fernandes)
+  - Elaborate FTS snippets and place them in a container (António Fernandes, Alan Day)
+* Modernizing Properties window
+  - Implement new "pages and rows" design (Peter Eisenmann, António Fernandes)
+  - Move ability to set default app into Open With dialog (António Fernandes, Corey Berla)
+* Reorganizing context menus (Allan Day, António Fernandes).
+* Refining view visual styles
+  - Saturate selection colors (Allan Day, Alexander Mikhay)
+  - Add icon shadows (Jakub Steiner)
+  - Refine layout of column editor dialog. (Allan Day, António Fernandes)
+* Using more modern widgetry
+  - Use AdwTabBar for detatchable tabs (Alexander Mikhaylenko, António Fernandes, Christopher Davis)
+  - Use AdwEmptyState for empty folder views (Christopher Davis, António Fernandes).
+  - Use AdwMessageDialog instead of GtkMessage. (Christopher Davis, Ondrej Holy)
+* Resolving regressions from the GTK 3 to 4 switch:
+  - Restore Accessibility relations (Corey Berla).
+  - Restore location entry suggestions (Corey Berla).
+  - Restore libcloudproviders integration (Ondrej Holy)
+* Opening new tab with middle click on next and forward buttons (Corey Berla)
+* Miscellaneous bugfixes (multiple contributos)
 * Translation updates (GNOME Translation Project contributors)
 
-Major changes in 42.rc
+Leftover known regressions in 43.beta
+  - Lacks HiDPI icons
+  - Lacks attention-grabbing animation on operations button
+
+Major changes in 43.alpha
 =========================
-* Tweak thumbnail shadow drawing to fix performance regressions (António Fernandes)
-* Various search engine fixes (Ondrej Holy)
+* Resolving regressions from the GTK 3 to 4 switch:
+  - Reintroduce clipboard with GTK 4 (António Fernandes)
+  - Reintroduce Drag’n’Drop with GTK 4 (Corey Berla, António Fernandes)
+  - Reintroduce emblems independently of file icon (António Fernandes)
+  - Reintroduce filter search tags with GTK 4 (António Fernandes)
+  - Port audio-video-properties extension to GTK 4 (Corey Berla)
+  - Restore sidebar features from GTK 3 (Corey Berla)
+  - Fix other regressions from the GTK 3 to 4 switch (António Fernandes, Noëlle,Óscar Fernández Díaz, Ondrej Holy, Corey Berla, Ákos Horváth, Corey Berla)
+* Modernizing view widgets
+  - Port files grid view mode to GtkGridView (António Fernandes)
+  - Reimplement files list view mode with GtkColumnView (António Fernandes)
+  - Add checkerboard background for thumbnails with transparency (Utkarsh Gandhi, António Fernandes)
+* Enhancing menus:
+  - New menu item to open current folder in another application (António Fernandes)
+  - Add menu item to copy current path to clipboard (Utkarsh Gandhi)
+  - Redesign zoom controls as icon size controls (António Fernandes)
+  - Context menu bugfixes (Owen D'Aprile, Ignacy Kuchciński)
+  - Add context menu item to show Properties in Other Locations (Corey Berla)
+  - Improve support for context menus on touchscreens
+  - Show extensions in templates names (Roshan R)
+  - Show sort menu options in list virw mode (António Fernandes)
+  - Allow sorting in recent and search (António Fernandes)
+* Other enhancements:
+  - Use better in-app notifications with AdwToast (Christopher Davis)
+  - Modernize "About" with AdwAboutWindow (Christopher Davis)
+  - Refine pathbar appearance (Utkarsh Gandhi, António Fernandes)
+  - Label '/' with the OS name (StarShot)
+  - Keyboard shortcuts overlay updates (Tero Gusto)
+* Miscellaneous bugfixes:
+  - Search engine bugfixes (Ondrej Holy)
+  - Floating satus bar bugfixes (Ignacy Kuchciński)
+  - Fix popover crashes (Corey Berla)
+  - Allow copying to a ramfs (Alister Sanders)
+  - Stop computing remote folders item count when didabled (Corey Berla)
+  - Fix batch rename for files with the same name in search results (Corey Berla)
+  - Don't trigger keyboard shortcuts ouside their intended scope (Vanadiae)
+* Maintenance work
+  - Adapt to thumbnails API changes (Michael Catanzaro)
+  - Depend on libportal and drop wallpaper fallback setting (Jeremy Bicha, António Fernandes)
+  - Modernize build with new meson features (Maximiliano)
+  - Bump extensions library version (António Fernandes)
 * Translation updates (GNOME Translation Project contributors)
 
-Major changes in 42.beta
-=========================
-* Revert GTK 4 switch and intentional regressions (António Fernandes, Ondrej Holy)
-* Fix criticals when selecting non-ZIP formats for compression (Ondrej Holy)
-* Add shadows to thumbnails in the old views (António Fernandes)
-* Support dark mode setting (Alexander Mikhaylenko)
-* Translation updates (GNOME Translation Project contributors)
-
-(Note: GTK 4 port is still in development but wasn't ready for this cycle.)
+Leftover known regressions in 43.alpha
+  - Lacks HiDPI icons
+  - Lacks attention-grabbing animation on operations button
 
 Major changes in 42.alpha
 =========================

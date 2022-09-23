@@ -1,25 +1,74 @@
-option('pkglibdir', type: 'string', value: '',
-  description: 'The private directory the shared library/typelib will be installed into.'
+##############
+# Extensions #
+##############
+option(
+  'docs',
+  type: 'boolean',
+  value: false,
+  description: 'Build documentation for extension library',
 )
-option('pkgdatadir', type: 'string', value: '',
-  description: 'The private directory the gir file will be installed into.'
+option(
+  'extensions',
+  type: 'boolean',
+  value: true,
+  description: 'Build stock extensions',
 )
-option('static', type: 'boolean', value: false,
-  description: 'Build as a static library'
+option(
+  'introspection',
+  type: 'boolean',
+  value: true,
+  description: 'Build GObject introspection data for extension library',
 )
-option('with-introspection', type: 'boolean', value: false,
-  description: 'Build gobject-introspection support'
+##################
+# End extensions #
+##################
+
+############
+# Features #
+############
+option(
+  'packagekit',
+  type: 'boolean',
+  value: true,
+  description: 'Enable finding file type handlers using PackageKit',
 )
-option('with-vapi', type: 'boolean', value: false,
-  description: 'Build vapi file'
+option(
+  'selinux',
+  type: 'boolean',
+  value: false,
+  description: 'Enable SELinux context support in file properties dialog',
 )
-# Widget options
-option('with-gtk-hacks', type: 'boolean', value: false)
-option('with-main-view', type: 'boolean', value: false)
-option('with-main-icon-view', type: 'boolean', value: false)
-option('with-main-list-view', type: 'boolean', value: false)
-option('with-margin-container', type: 'boolean', value: false)
-option('with-tagged-entry', type: 'boolean', value: false)
-option('with-notification', type: 'boolean', value: false)
-option('with-main-box', type: 'boolean', value: false)
-option('with-main-icon-box', type: 'boolean', value: false)
+################
+# End features #
+################
+
+###########
+# Testing #
+###########
+option(
+  'profiling',
+  type: 'boolean',
+  value: false,
+  description: 'Enable performance profiling',
+)
+option(
+  'tests',
+  type: 'combo',
+  choices: [
+    'none',
+    'headless',
+    'all'
+  ],
+  value: 'headless',
+  description: 'Build selected tests',
+)
+###############
+# End testing #
+###############
+
+option(
+  'profile',
+  type: 'string',
+  value: '',
+  description: 'Build with specified application ID',
+)
