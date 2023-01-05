@@ -4,7 +4,7 @@
 #
 Name     : nautilus
 Version  : 43.1
-Release  : 73
+Release  : 74
 URL      : https://download.gnome.org/sources/nautilus/43/nautilus-43.1.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/43/nautilus-43.1.tar.xz
 Summary  : No detailed summary available
