@@ -5,7 +5,7 @@
 #
 Name     : nautilus
 Version  : 44.0
-Release  : 79
+Release  : 80
 URL      : https://download.gnome.org/sources/nautilus/44/nautilus-44.0.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/44/nautilus-44.0.tar.xz
 Summary  : No detailed summary available
