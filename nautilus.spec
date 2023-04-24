@@ -4,10 +4,10 @@
 # Using build pattern: meson
 #
 Name     : nautilus
-Version  : 44.0
-Release  : 81
-URL      : https://download.gnome.org/sources/nautilus/44/nautilus-44.0.tar.xz
-Source0  : https://download.gnome.org/sources/nautilus/44/nautilus-44.0.tar.xz
+Version  : 44.1
+Release  : 82
+URL      : https://download.gnome.org/sources/nautilus/44/nautilus-44.1.tar.xz
+Source0  : https://download.gnome.org/sources/nautilus/44/nautilus-44.1.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-2.1
@@ -104,15 +104,15 @@ locales components for the nautilus package.
 
 
 %prep
-%setup -q -n nautilus-44.0
-cd %{_builddir}/nautilus-44.0
+%setup -q -n nautilus-44.1
+cd %{_builddir}/nautilus-44.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680040438
+export SOURCE_DATE_EPOCH=1682360392
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
