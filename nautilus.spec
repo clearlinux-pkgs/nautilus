@@ -5,7 +5,7 @@
 #
 Name     : nautilus
 Version  : 44.2
-Release  : 85
+Release  : 86
 URL      : https://download.gnome.org/sources/nautilus/44/nautilus-44.2.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/44/nautilus-44.2.tar.xz
 Summary  : No detailed summary available
@@ -115,7 +115,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685462798
+export SOURCE_DATE_EPOCH=1685591306
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -169,7 +169,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libnautilus-extension.so
 /usr/include/nautilus/libnautilus-extension/nautilus-column-provider.h
 /usr/include/nautilus/libnautilus-extension/nautilus-column.h
 /usr/include/nautilus/libnautilus-extension/nautilus-extension-enum-types.h
