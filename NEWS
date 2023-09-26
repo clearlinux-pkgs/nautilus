@@ -1,14 +1,94 @@
-Major changes in 44.2.1
+Major changes in 45.0
 =====================
-* Hotfix for grid view bug introduced in 44.2, while gtk 4.10.4 is not released (António Fernandes)
-* Fix crash when closing tabs right after clicking (Corey Berla)
 
-Major changes in 44.2
+* Translation updates (GNOME Translation Project contributors)
+
+Major changes in 45.rc
 =====================
-* Fix crashes with expandable folders and on Other Locations (Corey Berla)
-* Avoid inconsistent search states (Khalid Abu Shawarib)
-* Prevent lingering tracker cursors (Carlos Garnacho)
-* Fix rubberband range behavior on list view (António Fernandes)
+
+* Avoid slowness when many files are selected (Corey Berla, António Fernandes)
+* Make tooltip and menu for Preferences back button not empty (Domenico Iezzi)
+* Revert patch which could cause loss of data (Corey Berla, Ondrej Holy)
+* Fix sizing and styling of Visible Columns (António Fernandes)
+* Change sidebar title (António Fernandes)
+* Translation updates (GNOME Translation Project contributors)
+
+Major changes in 45.beta2
+=====================
+
+* Feature enhancements:
+  - New "Search Everywhere" buttons to expand search scope (Allan Day, António Fernandes)
+  - Modern full-height sidebar layout (Marco Melorio, António Fernandes)
+  - Refined sidebar sizing and folding treshold (Tobias Bernard, Corey Berla, António Fernandes)
+* Performance enhancements:
+  - Flickerless transition into and from search (António Fernandes)
+  - Accelerated generation of multiple thumbnail (Khalid Abu Shawarib, Corey Berla)
+  - Avoid DBus-activating other apps when starting (Corey Berla)
+* Bugfixes:
+  - Delete partially copied file on cancelled copy (Corey Berla)
+  - Don't restrict shell search results do %HOME (António Fernandes)
+  - Don't open trash on drag hover (Jakob Landbo)
+  - Fix multiple search bugs (Khalid Abu Shawarib, Peter Eisenmann, António Fernandes)
+  - Avoid crashes on search (Khalid Abu Shawarib, Corey Berla)
+  - Fix "sort after rename" regression (António Fernandes)
+  - Fix various styling issues (Alice Mikhaylenko)
+  - Don't allow to resize Properties too small (Automeris naranja)
+* Maintenance:
+  - Disable deprecation warnings, fix other warnings (Peter Eisenmann, Luciano Santos)
+* Translation updates (GNOME Translation Project contributors)
+
+Major changes in 45.beta
+=====================
+
+* Enhancements:
+  - Use new navigation view and flat headerbar for Properties (Peter Eisenmann, António Fernandes)
+  - Don't switch view mode when searching (António Fernandes)
+  - Don't add search to history stack (António Fernandes)
+  - Optimize view performance when selecting or removing many items (Corey Berla)
+* Bugfixes:
+  - Prefent mixed-language date and time labels (António Fernandes)
+  - Multiple starred files view bugfixes (Corey Berla, António Fernandes)
+  - Context menu capitalization (Alessandro Bono)
+* Maintenance:
+  - Replace some eel API with direct GLib API (Peter Eisenmann)
+  - Cleanup URI scheme checking (Peter Eisenmann, António Fernandes)
+  - Use newer async API for creating thumbnails (Khalid Abu Shawarib)
+* Translation updates (GNOME Translation Project contributors)
+
+Major changes in 45.alpha
+=====================
+
+* Enhancements:
+  - Boost search performance (Carlos Garnacho, António Fernandes)
+  - Redesign Visible Columns options, allow changing default columns (Corey Berla, Peter Eisenmann)
+  - Support dropping images from web pages (Corey Berla)
+  - Show bytes size as tooltip for folder properties too (Raihan)
+  - Indicate starred files in grid view (Gary Li)
+  - Support skipping errors while creating compressed archives (Gary Li)
+  - Make date and time format more consistent (Allan Day, Venkata Kesav Venna, Ondrej Holy)
+  - Make Ctrl+F refocus search bar, not cancel search (Khalid Abu Shawarib)
+  - Adapt sidebar width to window width, and use a breakpoint for adaptiveness (Christopher Davis)
+  - Allow moving keyboard focus within list rows (Corey Berla)
+  - Replace GtkComboBox with GtkDropDown (Corey Berla)
+  - Simplify Keyboard Shortcuts window definition (Sabri Ünal)
+  - Improve file opening experience while sandboxed (António Fernandes)
+* Bugfixes:
+  - Fix results ordering, and other search bugs (Eric Daigle, António Fernandes, Carlos Garnacho, Khalid Abu Shawarib)
+  - Fix tooltips, a11y labels, and i18n issues (sunflowerskater, Khalid Abu Shawarib, Automeris naranja, Sabri Ünal)
+  - Fix sushi integration bugs (Corey Berla)
+  - Don't hide incompletely deleted folders (Corey Berla)
+  - Show file renamed to hidden again on undo (Corey Berla)
+  - Don't state file was "deleted" if it was moved to trash (Sayan Bhattacharjee)
+  - Fix rubberband range behavior on list view (António Fernandes)
+  - Respect modifiers when dropping on tabs; disable broken tab drop target on X11 (Corey Berla)
+  - Fix bugs when reloading on autofs timeouts (Ondrej Holy)
+  - Don't offer to format volumes which cannot be formatted, e.g. MTP (Ondrej Holy)
+  - Fix multiple crashes (Corey Berla, António Fernandes)
+  - Fix multiple leaks (Khalid Abu Shawarib, António Fernandes)
+* Maintenance:
+  - Rename default branch to 'main' (Peter Eisenmann)
+  - Make libcloudproviders dependency optional again (Ondrej Holy)
+  - Improve reproducibility (Khem Raj)
 * Translation updates (GNOME Translation Project contributors)
 
 Major changes in 44.1

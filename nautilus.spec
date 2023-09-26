@@ -4,10 +4,10 @@
 # Using build pattern: meson
 #
 Name     : nautilus
-Version  : 44.2.1
-Release  : 87
-URL      : https://download.gnome.org/sources/nautilus/44/nautilus-44.2.1.tar.xz
-Source0  : https://download.gnome.org/sources/nautilus/44/nautilus-44.2.1.tar.xz
+Version  : 45.0
+Release  : 88
+URL      : https://download.gnome.org/sources/nautilus/45/nautilus-45.0.tar.xz
+Source0  : https://download.gnome.org/sources/nautilus/45/nautilus-45.0.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-2.1
@@ -44,7 +44,7 @@ BuildRequires : pkgconfig(x11)
 
 %description
 # nautilus
-[![Pipeline status](https://gitlab.gnome.org/GNOME/nautilus/badges/master/pipeline.svg)](https://gitlab.gnome.org/GNOME/nautilus/commits/master)
+[![Pipeline status](https://gitlab.gnome.org/GNOME/nautilus/badges/main/pipeline.svg)](https://gitlab.gnome.org/GNOME/nautilus/commits/main)
 
 %package bin
 Summary: bin components for the nautilus package.
@@ -104,10 +104,10 @@ locales components for the nautilus package.
 
 
 %prep
-%setup -q -n nautilus-44.2.1
-cd %{_builddir}/nautilus-44.2.1
+%setup -q -n nautilus-45.0
+cd %{_builddir}/nautilus-45.0
 pushd ..
-cp -a nautilus-44.2.1 buildavx2
+cp -a nautilus-45.0 buildavx2
 popd
 
 %build
@@ -115,7 +115,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685975904
+export SOURCE_DATE_EPOCH=1695687121
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
