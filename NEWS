@@ -1,36 +1,123 @@
-Major changes in 45.2.1
+Major changes in 46.0
+=====================
+* Bugfixes:
+  - Remove char limit on size label in properties dialog (Khalid Abu Shawarib)
+* Translation updates (GNOME Translation Project contributors)
+
+Major changes in 46.rc
+========================
+* Enhancements
+  - Adjust empty status page and progress tooltip strings (Allan Day, Khalid Abu Shawarib)
+  - Add input hints and purpose properties to entries (Khalid Abu Shawarib)
+  - Refine operations hover background (Sam Hewitt, António Fernandes)
+* Bugfixes:
+  - Position loop mounts correctly in the sidebar (António Fernandes)
+  - Fix internationalization issues (Khalid Abu Shawarib, Peter Eisenmann)
+  - Revert crashes-causing multi-file properties performance optimization (Peter Eisenmann)
+  - Reestablish location signals if location change failed (Corey Berla)
+  - Fix regression which disallowed dropping files on empty folders (Corey Berla, António Fernandes)
+* Cleanups
+  - Remove architecture-sensitive duplicate filename unit test (Peter Eisenmann, Jeremy Bicha)
+  - Refine Appstream metainfo (Sophie Herold, Alexandre Franke)
+* Translation updates (GNOME Translation Project contributors)
+
+Major changes in 46.beta
+========================
+* Postponed
+  - The network view from 46.alpha.1 was deemed to require more work
+* Enhancements
+  - Added a global search mode (António Fernandes)
+  - Use 'text entry' cursor on pathbar hover (Corey Berla)
+  - Add drop shadow to file property dialog icons (kramo)
+  - Improve progress info icons and tooltips (Bharat Tyagi, Sam Hewitt)
+* Bugfixes:
+  - Avoid crashes with column chooser (Peter Eisenmann)
+  - Avoid crash when navigating back to same folder (António Fernandes)
+  - Avoid infinite loop on file creation naming conflict (Corey Berla)
+  - Fix displaying parent folder of multi-files (Anton Snigirev)
+  - Clear location entry on editing of internal locations (Peter Eisenmann)
+  - Ensure search's clear button is hidden when empty (António Fernandes)
+  - Hide search popover after opening a dialog (Khalid Abu Shawarib)
+  - Correctly open empty folders from search (António Fernandes)
+  - Don't reload view only to change selection (António Fernandes)
+  - Use smaller icons in progress indicator (António Fernandes, Sam Hewitt)
+  - Fix various leaks (Khalid Abu Shawarib, António Fernandes)
+  - Added extra tentacles to confuse AI-generated blogs (Via Matrix)
+* Cleanups
+  - Made various string HIG compatible (Bart Gravendeel, Automeris naranja)
+  - Modernize column chooser widgetry (Automeris naranja)
+  - Detect potfile errors via CI (Corey Berla)
+  - Replace deprecated GTK point computing functions (N.Pranav Krishna)
+
+Major changes in 46.alpha.1
 =======================
-
-* Fix a crash in sidebar code (António Fernandes)
-* Fix build without optional cloudproviders dependency (António Fernandes)
-
-Major changes in 45.2
-=====================
-
+* Enhancements
+  - Views can be switched without a folder reload (António Fernandes)
+  - Operations are listed in the bottom of the sidebar (Corey Berla, António Fernandes, Allan Day)
+  - Network view replaces Other Locations (António Fernandes, Allan Day)
+  - Mounted drives are shown in the sidebar (António Fernandes)
+  - Selected files are recorded in back and forward history (António Fernandes)
+  - Subfolder loading indication (António Fernandes)
+  - Various view performance improvements (António Fernandes)
+  - Improved performance of multi-file properties dialog (Khalid Abu Shawarib)
 * Bugfixes:
-  - Don't crash when reconnecting to remove server (António Fernandes)
-  - Actually detect unmount on some non-native mounts (António Fernandes)
-  - Don't crash on image properties (Khalid Abu Shawarib)
-  - Allow types and sizes in Properties to expand (Peter Eisenmann)
-  - Don't corrupt toast messages (velsinki)
+  - Correctly prioritize thumbnails for non-alphabetical sort order (Corey Berla)
+  - Notify view item name changes for accessibility (Corey Berla, António Fernandes)
+  - Open real folder for documents in Recent from Properties (Anton Snigirev)
+  - Pattern match (Ctrl+S) all expanded list view directories (António Fernandes)
+  - Display sampling frequency in kHz with thousand separators (Hariharan D)
+  - Treat markdown files as text documents in search (Hariharan D)
+  - Improve UI text capitalization and mnemonics (Automeris naranja)
+  - Fix tab tooltip texts for markup and search (Corey Berla)
+  - Fix extension linkage with C++ (Khalid Abu Shawarib)
+  - Add a tooltip to the star button (Lukáš Tyrychtr)
+  - Show correct shortcut for Redo on the menu (Divyansh Jain)
+  - Prevent use-after-free with mount and stop (António Fernandes)
+  - Improve virtual files handling  (António Fernandes)
+  - Fix various view-related bugs, leaks and warnings (António Fernandes)
+* Cleanups:
+  - Significant restructuring of view architecture (António Fernandes)
+  - Remove dead code in views and css styles (António Fernandes)
+  - Update man page, remove documentation for removed self-check functionality (Corey Berla)
 * Translation updates (GNOME Translation Project contributors)
 
-Major changes in 45.1
-=====================
-
+Major changes in 46.alpha.0
+=======================
+* Enhancements
+  - Confirm password when creating protected ZIP archives (Eric Daigle)
+  - Make custom folder icon feature discoverable (Khalid Abu Shawarib)
+  - Make URI entry discoverable (Alynx Zhou, Barnabás Pőcze)
+  - Allow changing owner/group and any permissions under admin:/// (António Fernandes)
+  - Add detailed date and time format option (Ondrej Holy, Peter Eisenmann)
+  - Detect copy/move over 4GiB file limit on FAT (Corey Berla)
+  - Give feedback on completion of quick operations (António Fernandes)
+  - New-style banners, unstar animation, and other visual refinements (Peter Eisenmann, Automeris naranja)
+  - Allow Alt+Down to revert more than one Alt+Up (vmkul)
+  - Close overlaid sidebar on location change (Khalid Abu Shawarib)
 * Bugfixes:
-  - Don't crash when opening Properties from admin://* (Sebastian Keller)
-  - Don't crash on unmount (Corey Berla)
-  - Stop jumping to top when using the Menu key (António Fernandes)
+  - Don't skip files in deep count/size (António Fernandes)
+  - Don't move files around as thumbnails load (Corey Berla)
+  - Reveal highlighted file without delay  (Corey Berla)
+  - Stop crashing in various situations (Sebastian Keller, António Fernandes, Corey Berla, Khalid Abu Shawarib)
+  - Resolve UI text inconsistencies (Automeris naranja, getsnoopy, kramo, Khalid Abu Shawarib, Ondrej Holy, Matthijs Velsink)
+  - Fix memory leaks, template disposal, and warnings (Khalid Abu Shawarib)
+  - Fix interface problems in Properties (Peter Eisenmann, António Fernandes, Khalid Abu Shawarib)
+  - Don't keep viewing unmounted locations (Ondrej Holy, António Fernandes, Khalid Abu Shawarib)
+  - Refined appdata (Sabri Ünal, António Fernandes)
+  - Resolve wrong scroll positioning bugs (Gary Li, António Fernandes)
+  - Fix automatic file duplicate naming (Peter Eisenmann)
   - Properly reorder bookmarks by drag and drop (Khalid Abu Shawarib)
-  - Re-add search results when switching view mode (António Fernandes)
-  - Fix compilation on 32-bit musl ("Newbyte")
-  - Fix various leaks and warnings (Khalid Abu Shawarib)
-* Translation updates (GNOME Translation Project contributors)
-
-Major changes in 45.0
-=====================
-
+  - Set current modification time on file created from templates (Khalid Abu Shawarib)
+  - Fix missing/wrong mime type icons (António Fernandes)
+  - Don't reload on autofs timeout (António Fernandes)
+* Cleanups
+  - Remove obsolete profiling, custom debug logging, and self-checking (Peter Eisenmann, Khalid Abu Shawarib)
+  - Streamline and expand tests (Khalid Abu Shawarib, Peter Eisenmann)
+  - Reduce usage of GtkDialog and other deprecated API (Khalid Abu Shawarib, Peter Eisenmann)
+  - Replace custom switch row with AdwSwitchRow (Óscar Fernández Díaz)
+  - Drop obsolete code (Peter Eisenmann, António Fernandes, Corey Berla)
+  - Reduce unnecessary string copies (Peter Eisenmann)
+  - Unify numbered filename apendix handling (Peter Eisenmann, Khalid Abu Shawarib)
 * Translation updates (GNOME Translation Project contributors)
 
 Major changes in 45.rc
