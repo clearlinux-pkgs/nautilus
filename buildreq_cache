@@ -1,2 +1,6 @@
-47.0
+46.2
+libportal-dev
+pkgconfig(cloudproviders)
 pkgconfig(libadwaita-1)
+pkgconfig(libportal)
+pkgconfig(tracker-sparql-3.0)

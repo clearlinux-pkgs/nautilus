@@ -1,108 +1,25 @@
-Major changes in 47.0
+Major changes in 46.2
 =====================
-* Enhancements
- - Show new folder button in Open Folder(s) modes (Corey Berla)
- - Persist window size for file chooser (Corey Berla)
 * Bugfixes:
- - Fix grammar error (Khalid Abu Shawarib)
- - Fix build error (Jami Kettunen)
- - Escape toast button mnemonics (Khalid Abu Shawarib)
- * File chooser fixes:
-  - Don't show undo button when suggested name doesn't exist (Corey Berla)
-  - Show filter name more consistently (Corey Berla)
-  - Stop crashing when using "Open Item Location" (Corey Berla)
-  - Fix issue where new folder button disappears (Corey Berla)
-  - Fix flat dropdown styles (Alice Mikhaylenko)
+  - Don't treat future dates as "Today" (Grey Nicholson)
+  - Fix crashes (Khalid Abu Shawarib, Gary Li, Peter Eisenmann)
+  - Prevent freeze on Audio/Video properties (Peter Eisenmann)
+  - Don't irreversibly hide sidebar with touch gesture (Khalid Abu Shawarib)
+  - Don't expose unreadable symbol to screen reader (Automeris naranja)
+  - Fix search selection performance (Gary Li)
+  - Fix sorting on grid view (Gary Li)
 * Translation updates (GNOME Translation Project contributors)
 
-Major changes in 47.rc
+Major changes in 46.1
 =====================
-* Enhancements
-- Polish the file chooser (António Fernandes)
-- Implement file chooser "choices" menu (Corey Berla)
-- Allow extracting bzip2 tar files (Khalid Abu Shawarib)
-- Allow dropping items into the file chooser (Corey Berla)
-- Add the background menu to the file chooser (Corey Berla)
-- Allow vertical scrolling in the pathbar (Liam Rust)
-- Activate the accept button by default in file chooser (Dylan McCall)
-* Bugfixes:
-- Fix various file chooser crashes (Corey Berla)
-- Don't hide file chooser filters with long filenames or in narrow mode (Corey Berla)
-- Make sure the pathbar always shows the current folder (Corey Berla)
-- Fix overlapping filename widget in file chooser (Corey Berla)
-- Make nautilus previewer work between the main window and file chooser (António Fernandes)
-- Various fixes for file chooser paths and save locations (Corey Berla)
-- Set focus correctly in file chooser (Corey Berla)
-- Allow unselecting an item in file chooser (Corey Berla)
-- Add a tooltip to the network address bar button (Automeris naranja)
-- Disallow conventional DnD into the pathbar in file chooser mode (Corey Berla)
-- Don't overflow window in file chooser (Corey Berla)
-* Translation updates (GNOME Translation Project contributors)
-
-Major changes in 47.beta
-=====================
-* Enhancements
-- Implement file chooser portal and introduce file chooser ui (António Fernandes)
-- Redesign and modernize the compression dialog (Automeris naranja)
-- Modernize the new folder dialog (Automeris naranja, António Fernandes)
-- Replace Search Banner with Search Info Popover (Anuraag Reddy Patllollu)
-- Redesign "Other Types" search (Khalid Abu Shawarib)
-- Port to new adwaita widgets (Automeris naranja, Khalid Abu Shawarib, Peter Eisenmann)
-- Update emblems with symbolics (Sam Hewitt, Khalid Abu Shawarib, Peter Eisenmann)
-* Bugfixes:
-- Use correct path for email (Peter Eisenmann)
-- File chooser bug fixes (Corey Berla)
-- Disable bookmarking the network view (Corey Berla)
-- Change files view accent to grey (Alice Mikhaylenko)
-- Fix dragging on touch devices (Lukas Swierzy, Gary Li)
-- Misc bugfixes (Khalid Abu Shawarib, Peter Eisenmann, António Fernandes, Corey Berla)
-* Translation updates (GNOME Translation Project contributors)
-
-Major changes in 47.alpha
-=====================
-* Enhancements
- - Add the Network view (António Fernandes, Allan Day)
- - Show xdg dirs in sidebar as regular (removable) bookmarks (António Fernandes)
- - Show sidebar bookmarks before mounts (António Fernandes)
- - Remove "Other Locations" and show mounts directly on the sidebar (António Fernandes)
- - Improve view performance (Khalid Abu Shawarib)
- - Use new adw views (Automeris naranja)
- - Improve internal NautilusFile performance (Peter Eisenmann)
- - Improve ui for progress indicator (Peter Eisenmann)
- - Improve ui to floating bar (Sam Hewitt, piegames)
- - Allow staring from the context menu (José Guilherme)
- - Redesign trash dialog (Anuraag Reddy Patllollu, Allan Day)
- - Allow Scripts in flatpak (Anuraag Reddy Patllollu)
- - Open mounts in original tab instead of focused tab (Gary Li)
- - Allow simultaneous mounting (Khalid Abu Shawarib)
 * Bugfixes:
   - Create archive with Enter on Compress dialog (Lukáš Tyrychtr)
-  - Accessibility fixes (Automeris naranja, Sabri Ünal)
   - Move focus correctly when item is removed (Khalid Abu Shawarib)
-  - Don't reset permissions when copying from a non-isofs readonly filesystem (Fina Wilke)
-  - Open correct panel in GNOME Settings for trash settings (Khalid Abu Shawarib)
-  - Disable paste in Trash, Recent, and Starred (Jonathan Lin)
-  - Fix error when passing invalid location to portals (Khalid Abu Shawarib)
-  - Fix memory leaks (Khalid Abu Shawarib, António Fernandes)
-  - Call shutdown() on modules (Corey Berla)
+  - View performance optimization (Khalid Abu Shawarib)
+  - Fix crash when compressing a file and a folder (Khalid Abu Shawarib)
   - Don't show banners in global search (Khalid Abu Shawarib)
-  - Prevent a crash (Khalid Abu Shawarib, Gary Li)
-  - Keep correct file list order in a DnD (Khalid Abu Shawarib)
-  - Don't display future dates as "Today" or "Yesterday" (Grey Nicholson)
-  - Prevent freeze (Peter Eisenmann)
-  - Fix broken sort order when switching views (Gary Li)
-  - Don't irreversibly hide sidebar with touch gesture (Khalid Abu Shawarib)
-  - Don't unnecessarily re-set selection in search (Gary Li)
-  - Don't scale up images in properties preview (Khalid Abu Shawarib)
-  - Actually drop wayland export handles (António Fernandes)
-  - Fix potentially incorrect file operation (Khalid Abu Shawarib)
-  - Batch rename fix tags, and allow illegal characters (Anuraag Reddy Patllollu)
-  - Allow xdp to fail (Balló György)
-  - Fix typo (Alexandre Franke)
-* Cleanups
-  - Use property styling for adw rows (Automeris naranja, Anton Snigirev)
-  - Code cleanup (Khalid Abu Shawarib, Peter Eisenmann, Corey Berla, António Fernandes)
-  - Significant refactoring and cleanup to prepare to Nautilus as a file chooser (António Fernandes)
+  - Preserve permissions when copying from read-only file systems (Khalid Abu Shawarib)
+  - Disable non-working global search from Other Locations (António Fernandes)
 * Translation updates (GNOME Translation Project contributors)
 
 Major changes in 46.0
