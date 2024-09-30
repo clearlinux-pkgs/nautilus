@@ -1,10 +1,10 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-libexif-dev
-gtk-doc
-gobject-introspection
-gobject-introspection-dev
 desktop-file-utils
-libxslt
-gstreamer-dev
+gobject-introspection-dev
 gst-plugins-base-dev
+gstreamer-dev
+gtk-doc
+libexif-dev
+libxslt
+tracker-miners

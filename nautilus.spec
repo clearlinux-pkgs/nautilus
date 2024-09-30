@@ -6,10 +6,10 @@
 # autospec commit: a19cdc79b421
 #
 Name     : nautilus
-Version  : 46.2
-Release  : 96
-URL      : https://download.gnome.org/sources/nautilus/46/nautilus-46.2.tar.xz
-Source0  : https://download.gnome.org/sources/nautilus/46/nautilus-46.2.tar.xz
+Version  : 47.0
+Release  : 97
+URL      : https://download.gnome.org/sources/nautilus/47/nautilus-47.0.tar.xz
+Source0  : https://download.gnome.org/sources/nautilus/47/nautilus-47.0.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-2.1
@@ -22,7 +22,6 @@ Requires: dconf
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : desktop-file-utils
-BuildRequires : gobject-introspection
 BuildRequires : gobject-introspection-dev
 BuildRequires : gst-plugins-base-dev
 BuildRequires : gstreamer-dev
@@ -39,6 +38,7 @@ BuildRequires : pkgconfig(libportal)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(tracker-sparql-3.0)
 BuildRequires : pkgconfig(x11)
+BuildRequires : tracker-miners
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -105,10 +105,10 @@ locales components for the nautilus package.
 
 
 %prep
-%setup -q -n nautilus-46.2
-cd %{_builddir}/nautilus-46.2
+%setup -q -n nautilus-47.0
+cd %{_builddir}/nautilus-47.0
 pushd ..
-cp -a nautilus-46.2 buildavx2
+cp -a nautilus-47.0 buildavx2
 popd
 
 %build
@@ -116,7 +116,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1727722730
+export SOURCE_DATE_EPOCH=1727734979
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -157,6 +157,7 @@ export GOAMD64=v2
 mkdir -p %{buildroot}/usr/share/package-licenses/nautilus
 cp %{_builddir}/nautilus-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/nautilus/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
 cp %{_builddir}/nautilus-%{version}/libnautilus-extension/LICENSE %{buildroot}/usr/share/package-licenses/nautilus/9a647436aa2324c4cb849c6f3d31c392ed50d9bd || :
+cp %{_builddir}/nautilus-%{version}/xdp-gnome/COPYING %{buildroot}/usr/share/package-licenses/nautilus/01a6b4bf79aca9b556822601186afab86e8c4fbf || :
 GOAMD64=v3
 DESTDIR=%{buildroot}-v3 ninja -C builddiravx2 install
 GOAMD64=v2
@@ -188,10 +189,10 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/share/gnome-shell/search-providers/org.gnome.Nautilus.search-provider.ini
 /usr/share/icons/hicolor/scalable/apps/org.gnome.Nautilus.svg
 /usr/share/icons/hicolor/symbolic/apps/org.gnome.Nautilus-symbolic.svg
+/usr/share/localsearch3/domain-ontologies/org.gnome.Nautilus.domain.rule
 /usr/share/metainfo/org.gnome.Nautilus.metainfo.xml
 /usr/share/nautilus/ontology/nautilus.description
 /usr/share/nautilus/ontology/nautilus.ontology
-/usr/share/tracker3/domain-ontologies/org.gnome.Nautilus.domain.rule
 
 %files dev
 %defattr(-,root,root,-)
@@ -220,6 +221,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/nautilus/01a6b4bf79aca9b556822601186afab86e8c4fbf
 /usr/share/package-licenses/nautilus/8624bcdae55baeef00cd11d5dfcfa60f68710a02
 /usr/share/package-licenses/nautilus/9a647436aa2324c4cb849c6f3d31c392ed50d9bd
 
