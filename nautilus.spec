@@ -7,7 +7,7 @@
 #
 Name     : nautilus
 Version  : 48.1
-Release  : 101
+Release  : 102
 URL      : https://download.gnome.org/sources/nautilus/48/nautilus-48.1.tar.xz
 Source0  : https://download.gnome.org/sources/nautilus/48/nautilus-48.1.tar.xz
 Summary  : No detailed summary available
